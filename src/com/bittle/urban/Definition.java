@@ -13,7 +13,7 @@ public class Definition {
     private String example = "";
     private long thumbsDown = 0;
 
-    public Definition(JsonObject obj){
+    Definition(JsonObject obj){
         def = obj.get("definition").getAsString();
         permaLink = obj.get("permalink").getAsString();
         thumbsUp =  strToL(obj.get("thumbs_up").getAsString());
