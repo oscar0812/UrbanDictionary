@@ -25,6 +25,10 @@ public class Definition {
         thumbsDown = strToL(obj.get("thumbs_down").getAsString());
     }
 
+    Definition(){
+        // empty for when there's no definitions
+    }
+
     private long strToL(String l){
         try{
             return Long.parseLong(l);
