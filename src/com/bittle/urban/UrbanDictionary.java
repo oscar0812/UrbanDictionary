@@ -1,6 +1,5 @@
 package com.bittle.urban;
 
-import com.bittle.urban.Definition;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -12,6 +11,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class UrbanDictionary {
 
@@ -61,7 +61,7 @@ public class UrbanDictionary {
 
             return list;
         } else
-            return null;
+            return new ArrayList<>();
     }
 
     public List<Definition> getDefinitions() {
@@ -76,17 +76,16 @@ public class UrbanDictionary {
             return definitions.get(index);
         }
         else
-            return null;
+            return new Definition();
     }
 
     public Definition getRandomDefinition() {
 
         if (hasDefinition()) {
-            int a = (int) (Math.random() * (definitions.size() + 1));
-            return definitions.get(a);
+            return definitions.get( new Random().nextInt(definitions.size() ));
         } else {
             System.out.println("No Definitions found.\n");
-            return null;
+            return new Definition();
         }
     }
 
